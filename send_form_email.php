@@ -16,7 +16,8 @@ if(isset($_POST['email'])) {
  
  
     // validation expected data exists
-    if(!isset($_POST['first_name'])||
+    if(
+       !isset($_POST['first_name'])||
        !isset($_POST['last_name']) ||
        !isset($_POST['phone'])     ||
        !isset($_POST['email'])     ||
@@ -24,11 +25,11 @@ if(isset($_POST['email'])) {
        !isset($_POST['city'])      ||
        !isset($_POST['state'])     ||
        !isset($_POST['zip'])       ||
-       !isset($_POST['date'])      ||
-       !isset($_POST['fish'])      ||
-       !isset($_POST['comments'])) {
-        died('We are sorry, but there appears to be a problem with the form you submitted.');       
-    }
+       !isset($_POST['date'])
+		) 
+		{
+	       died('We are sorry, but there appears to be a problem with the form you submitted.');       
+	    }
  
      
  
@@ -61,14 +62,6 @@ if(isset($_POST['email'])) {
     $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
   }
  
-  if(strlen($comments) < 2) {
-    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
-  }
- 
-  if(strlen($error_message) > 0) {
-    died($error_message);
-  }
- 
     $email_message = "Form details below.\n\n";
  
      
@@ -94,15 +87,6 @@ if(isset($_POST['email'])) {
 // create email headers
 $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
-'X-Mailer: PHP/' . phpversion();
-@mail($email_to, $email_subject, $email_message, $headers);  
-?>
- 
-<!-- include your own success html here -->
- 
-Thank you for contacting Off The Hook Sportfishing. We will be in touch with you very soon.
- 
-<?php
- 
-}
+ mail($email_subject, $email_message, $headers);  
+echo "Thank you for your booking inquiry!";
 ?>
