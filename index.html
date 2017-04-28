@@ -451,64 +451,74 @@
                     <h3>Book a Trip</h3>
                     <p>Please feel free to fill out the following form including contact information, or send us e-mail. We will call you to confirm your reservation. Please remember to include your phone number with area code so we may call you.  You may also call us with your reservations request. We fill up early so it is never too soon to reserve your spot!</p>
                     
-                    <form name="booking" method="post" action="send_form_email.php">
+                    <form id="contactForm" name="booking" method="post" action="contact.php">
+                        <div class="messages"></div>
                         <div class="row">
                             <div class="col-xs-6 col-md-6">
                                 <div class="form__group">
-                                    <label>First name</label>
-                                    <input type="text" name="first_name" required>
+                                    <label>First name *</label>
+                                    <input type="text" name="first_name" required="required" data-error="This field is required.">
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-6">
                                 <div class="form__group">
-                                    <label>Last name</label>
-                                    <input type="text" name="last_name" required>
+                                    <label>Last name *</label>
+                                    <input type="text" name="last_name" required="required" data-error="This field is required.">
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6 col-md-4">
                                 <div class="form__group">
-                                    <label>Phone</label>
-                                    <input type="tel" name="phone" required>
+                                    <label>Phone *</label>
+                                    <input type="tel" name="phone" required="required" data-error="This field is required.">
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-8">
                                 <div class="form__group">
-                                    <label>Email</label>
-                                    <input type="text" name="email" required>
+                                    <label>Email *</label>
+                                    <input type="email" name="email" required="required" data-error="This field is required.">
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="form__group">
-                            <label>Address</label>
-                            <input type="text" name="address" required>
+                            <label>Address *</label>
+                            <input type="text" name="address" required="required" data-error="This field is required.">
+                            <div class="help-block with-errors"></div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-md-7">
                                 <div class="form__group">
-                                    <label>City</label>
-                                    <input type="text" name="city" required>
+                                    <label>City *</label>
+                                    <input type="text" name="city" required="required" data-error="This field is required.">
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-2">
                                 <div class="form__group">
-                                    <label>State</label>
-                                    <input type="text" name="state" required>
+                                    <label>State *</label>
+                                    <input type="text" name="state" required="required" data-error="This field is required.">
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-3">
                                 <div class="form__group">
-                                    <label>Zip</label>
-                                    <input type="text" name="zip" required>
+                                    <label>Zip *</label>
+                                    <input type="text" name="zip" required="required" data-error="This field is required.">
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-md-4">
                                 <div class="form__group">
-                                    <label>Preferred date</label>
-                                    <input type="date" name="date" required>
+                                    <label>Preferred date *</label>
+                                    <input type="date" name="date" required="required" data-error="This field is required.">
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-8">
@@ -518,9 +528,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form__group">
-                            <label>Questions or concerns</label>
-                            <textarea rows="3" name="concerns"></textarea>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form__group">
+                                    <label>Questions or concerns</label>
+                                    <textarea rows="3" name="concerns"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="text-muted"><strong>*</strong> These fields are required.</p>
+                            </div>
                         </div>
 
                         <br><br>
@@ -662,6 +681,8 @@
     <script src="js/jquery-1.11.1.js"></script>
     <!-- BOOTSTRAP SCRIPTS -->
     <script src="js/bootstrap.js"></script>
+    <!-- BOOTSTRAP FORM VALIDATOR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
     <!-- EASING SCROLL SCRIPTS PLUGIN -->
     <script src="js/vegas/jquery.vegas.min.js"></script>
     <!-- VEGAS SLIDESHOW SCRIPTS -->
@@ -674,6 +695,7 @@
     <script src="js/appear.min.js"></script>
     <script src="js/animations.min.js"></script>
     <!-- CUSTOM SCRIPTS -->
+    <script src="js/contact.js"></script>
     <script src="js/custom.js"></script>
 </body>
 
