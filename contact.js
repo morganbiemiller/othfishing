@@ -1,10 +1,10 @@
 $(function () {
 
-    $('#contactForm').validator();
+    $('#contact-form').validator();
 
-    $('#contactForm').on('submit', function (e) {
+    $('#contact-form').on('submit', function (e) {
         if (!e.isDefaultPrevented()) {
-            var url = "../contact.php";
+            var url = "contact.php";
 
             $.ajax({
                 type: "POST",
