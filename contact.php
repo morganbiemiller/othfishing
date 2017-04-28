@@ -1,10 +1,10 @@
 <?php
 
 // configure
-$from = 'Demo contact form <ken@othfishing.com>';
-$sendTo = 'Demo contact form <morganbiemiller@gmail.com>';
+$from = 'Booking Inquiry <ken@othfishing.com>';
+$sendTo = 'Booking Inquiry <ken@othfishing.com>';
 $subject = 'New booking inquiry';
-$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'address' => 'Address', 'city' => 'City', 'state' => 'State', 'date' => 'Preferred Date', 'fish' =>'Wants to fish for:', 'message' => 'Message'); // array variable name => Text to appear in the email
+$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'address' => 'Address', 'city' => 'City', 'state' => 'State', 'date' => 'Preferred Date', 'fish' =>'Wants to fish for', 'message' => 'Message'); // array variable name => Text to appear in the email
 $okMessage = 'Your booking inquiry was successfully submitted. Thank you, I will get back to you soon!';
 $errorMessage = 'There was an error while submitting the form. Please try again later';
 
